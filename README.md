@@ -24,7 +24,7 @@ Sinta-se à vontade para contribuir, reportar problemas ou sugerir melhorias. O 
 
 ## Autor
 
-- Eduarodo SOuza
+- Eduardo Souza
 
 
 
