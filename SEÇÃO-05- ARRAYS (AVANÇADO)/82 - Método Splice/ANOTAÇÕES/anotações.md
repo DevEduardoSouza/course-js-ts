@@ -34,7 +34,7 @@ const namesDeleted = nomes.splice(-1, 1);
 // o splice  retorna um array com os elementos deletados
 
 console.log("Último Elemento deletado", namesDeleted);
-// Expected output: Array ["Eduardo", "Maria", "Sabrina"]
+// Expected output: Array ["Marcos"]
 ```
 
 - Removendo do início
