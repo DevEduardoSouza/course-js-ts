@@ -2,7 +2,7 @@
 
 - Função de filtrar o conteúdo de um array
 - Faz a filtragrm com poucas linhas de código
-- Retorna um novo array ou seja não modifiva o original
+- Retorna um novo array ou seja não modifica o original
   **Array.prototype.filter()**
 
 ## Exemplos
