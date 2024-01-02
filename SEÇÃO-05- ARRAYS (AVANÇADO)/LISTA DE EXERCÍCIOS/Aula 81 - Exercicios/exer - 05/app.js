@@ -8,7 +8,7 @@
  * - Implemente funções para:
  *   - Adicionar uma nova música à playlist✅.
  *   - Remover uma música da playlist com base no título ou no artista.✅
- *   - Encontrar todas as músicas de um determinado gênero.
+ *   - Encontrar todas as músicas de um determinado gênero.✅
  *   - Calcular a duração total da playlist.
  *   - Listar as músicas por ordem de duração.
  */
@@ -17,18 +17,22 @@ const songs = [
   {
     id: 1000,
     genre: "pop",
+    duration: 150,
   },
   {
     id: 1001,
     genre: "funk",
+    duration: 100,
   },
   {
     id: 1002,
     genre: "rap",
+    duration: 221,
   },
   {
     id: 1003,
     genre: "pop",
+    duration: 228,
   },
 ];
 
@@ -95,8 +99,16 @@ const searchByGenre = (songs, genre) => {
   return result;
 };
 
+const totalDurationPlaylist = (songs) => {
+  if (!songs) throw new Error("playlist does not exit");
+
+  const result = songs.reduce((ac, value) => (ac += value.duration), 0);
+  const formmatToMinutes = result / 60;
+  return Math.floor(formmatToMinutes);
+};
+
 try {
-  console.log(searchByGenre(songs, "pop"));
+  console.log(totalDurationPlaylist(songs) + " minutos");
 } catch (error) {
   console.log(error);
 }
