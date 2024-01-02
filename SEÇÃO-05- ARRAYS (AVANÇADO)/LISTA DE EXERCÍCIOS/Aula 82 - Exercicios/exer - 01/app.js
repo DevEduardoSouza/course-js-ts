@@ -9,3 +9,29 @@
  *    - Adicionar pedidos cancelados a um novo array usando concat().
  */
 
+const orders = [
+  { id: 1, pedido: "Pizza", cancelado: false },
+  { id: 2, pedido: "Hamburge", cancelado: true },
+  { id: 3, pedido: "Lasanha", cancelado: false },
+  { id: 4, pedido: "HotDog", cancelado: false },
+  { id: 5, pedido: "Arroz ao molho", cancelado: true },
+];
+
+const removePedido = (orders, id) => {
+  const pedidoRemovido = orders.find((order, index) => {
+    if (order.id === id) {
+      return orders.splice(index, 1);
+    }
+  });
+
+  return pedidoRemovido;
+};
+
+const pedidosCancelados = (orders) => {
+  const removidos = orders.filter((order) => order.cancelado === true);
+
+  return [].concat(...removidos);
+};
+
+console.log(pedidosCancelados(orders));
+console.log("\n", orders);

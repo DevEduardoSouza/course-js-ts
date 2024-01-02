@@ -4,7 +4,7 @@
 
 - São usadas para crair novos objetos
 - São como modelos/model
-- Para criar um função construtora usa a palavra function
+- Para criar uma função construtora usa a palavra function
 
 ```JavaScript
   // Sempre começar com a letra maiúscula
