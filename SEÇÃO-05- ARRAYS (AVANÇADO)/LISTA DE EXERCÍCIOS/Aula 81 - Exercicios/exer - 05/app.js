@@ -9,8 +9,8 @@
  *   - Adicionar uma nova música à playlist✅.
  *   - Remover uma música da playlist com base no título ou no artista.✅
  *   - Encontrar todas as músicas de um determinado gênero.✅
- *   - Calcular a duração total da playlist.
- *   - Listar as músicas por ordem de duração.
+ *   - Calcular a duração total da playlist✅.
+ *   - Listar as músicas por ordem de duração✅.
  */
 
 const songs = [
@@ -107,8 +107,18 @@ const totalDurationPlaylist = (songs) => {
   return Math.floor(formmatToMinutes);
 };
 
+const listSongsInOrderLength = (songs) => {
+  if (!songs) throw new Error("playlist does not exit");
+  return songs.sort((a, b) => a.duration - b.duration);
+};
+
 try {
-  console.log(totalDurationPlaylist(songs) + " minutos");
+  listSongsInOrderLength(songs).forEach((element) => {
+    console.log(element);
+  });
+  // console.log(listSongsInOrderLength(songs));
+
+  // console.log(songs);
 } catch (error) {
   console.log(error);
 }
