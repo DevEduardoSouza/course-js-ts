@@ -16,9 +16,19 @@
 const songs = [
   {
     id: 1000,
+    genre: "pop",
   },
   {
     id: 1001,
+    genre: "funk",
+  },
+  {
+    id: 1002,
+    genre: "rap",
+  },
+  {
+    id: 1003,
+    genre: "pop",
   },
 ];
 
@@ -73,10 +83,20 @@ const removeMusicFromPlaylistById = (songs, id) => {
   }
 };
 
-// try {
-//   removeMusicFromPlaylistById(songs, 1005);
-//   console.log("Musica removida com sucesso");
-//   console.log(songs);
-// } catch (error) {
-//   console.log(error);
-// }
+const searchByGenre = (songs, genre) => {
+  const result = songs.filter(
+    (song) => song.genre.toLowerCase().trim() === genre.toLowerCase().trim()
+  );
+
+  if (result.length === 0) {
+    throw new Error(`${genre} genre not found`);
+  }
+
+  return result;
+};
+
+try {
+  console.log(searchByGenre(songs, "pop"));
+} catch (error) {
+  console.log(error);
+}
