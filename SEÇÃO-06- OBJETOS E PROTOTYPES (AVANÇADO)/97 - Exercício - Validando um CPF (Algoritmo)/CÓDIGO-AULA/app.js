@@ -43,7 +43,7 @@
 
 */
 
-const cpf = "966.042.450-72";
+const cpf = "966.042.450-71";
 
 function validarCpf(cpf) {
   const cpfInicial = cpf.replace(/\D+/g, "");
@@ -63,7 +63,7 @@ function validarCpf(cpf) {
   // Comparar os cpf de entrada e de saida
   const cpfFinal = cpfSemPontos.reverse().join("");
 
-  return cpfInicial === cpfFinal ? true : false;
+  return cpfInicial === cpfFinal;
 }
 
 function somaTotal(cpf) {
