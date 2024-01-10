@@ -67,3 +67,5 @@ function criarPessoa(nome, sobrenome, altura, peso) {
   - Um getter nomeCompleto que retorna a concatenação do nome e sobrenome.
 
   - Um setter nomeCompleto que permite modificar tanto o nome quanto o sobrenome ao receber um valor novo, separando o valor em partes (o primeiro nome e o sobrenome) e atualizando as propriedades correspondentes.
+
+  ### Herança prototípica
