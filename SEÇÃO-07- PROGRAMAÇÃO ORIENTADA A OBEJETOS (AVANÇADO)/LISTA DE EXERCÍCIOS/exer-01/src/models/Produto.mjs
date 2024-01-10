@@ -8,7 +8,7 @@ export default class Product {
     this.#name = name;
     this.#price = price;
     this.#amount = amount;
-    this.#id_product = Math.floor(Math.random() * 10);
+    this.#id_product = String(Math.floor(Math.random() * 10));
   }
 
   /**

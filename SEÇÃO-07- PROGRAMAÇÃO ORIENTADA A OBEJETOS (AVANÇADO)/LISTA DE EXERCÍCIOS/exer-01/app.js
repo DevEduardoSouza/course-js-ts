@@ -23,7 +23,7 @@ Exercício:
   -----------------------------------------------------------
 
   
-  Pedido:
+  Pedido:✅
 
   Crie uma classe Pedido que tenha propriedades como número do pedido, data, cliente associado, produtos no pedido, etc.
   Adicione métodos para adicionar/remover produtos do pedido, calcular o total do pedido, e gerar um resumo do pedido.

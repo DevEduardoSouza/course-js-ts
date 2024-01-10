@@ -11,14 +11,14 @@ export default class Order {
     this.#randomId();
   }
 
-  // gerar o id order aleatorio
+  // gerar o id aleatorio da order
   #randomId() {
     const timestamp = new Date().getTime();
     const numberRandom = Math.floor(Math.random() * 100000);
     this.#id_order = `${timestamp}${numberRandom}`;
   }
 
-  // Add product
+  // Adcicionar produto
   #addProduct(product, quantity) {
     if (!product || typeof product !== "object") {
       throw new Error("Erro");
@@ -37,27 +37,44 @@ export default class Order {
     this.#addProduct(product, quantity);
   }
 
-  //remove product
-
+  //Remover produto
   #removeProduct(id) {
     if (!id || typeof id !== "string") {
       throw new Error("erro no id");
     }
 
-    // console.log(this.products[0].product.toObject.id);
-
-    const products = this.products;
-    const product = products.find((item) => {
-      const idObj = item.product.toObject.id;
-
-      console.log(idObj, id);
-      return idObj === id;
+    const indexOfProduct = this.products.findIndex((item) => {
+      return item.product.toObject.id === id;
     });
-    console.log("opa", product);
+
+    if (indexOfProduct === -1) {
+      throw new Error(`Produto com id ${id} não encontrado`);
+    }
+
+    const productRemoved = this.products.splice(indexOfProduct, 1);
+
+    return productRemoved;
+  }
+  removeProduct(id) {
+    return this.#removeProduct(id);
   }
 
-  removeProduct(id) {
-    this.#removeProduct(id);
+  // Calcular o total do pedido
+  calculateOrderTotal() {
+    const total = this.products.reduce((ac, value) => {
+      const { price } = value.product.toObject;
+      const { quantity } = value;
+
+      return ac + price * quantity;
+    }, 0);
+
+    return total;
+  }
+
+  // discount
+  discount() {
+    discountT: () => {};
+    discount2: () => {};
   }
 
   get products() {
@@ -78,7 +95,7 @@ export default class Order {
     return this.#client.toObject;
   }
 
-  // Retornar o pedido em forma de object
+  // Resumo do pedido
   get toObject() {
     return {
       id: this.#id_order,
